@@ -1,3 +1,6 @@
 node_modules
+dist
+.env
+.husky/
+jest.config.js
 CAM-tecnologia
-.husky
