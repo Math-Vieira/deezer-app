@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "eslint-config-standard-with-typescript": "^26.0.0",
     "git-commit-msg-linter": "^4.5.0"
   }
 }
