@@ -1,3 +1,3 @@
 {
-    "*.{ts,tsx}": ["eslint 'src/**' --fix", "npm test"]
+    "*.{ts,tsx}": ["eslint 'src/**' --fix", "npm run test --silent -- --watchAll=false --json --passWithNoTests"]
 }
