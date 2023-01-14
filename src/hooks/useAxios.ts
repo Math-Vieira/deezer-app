@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import axios, { RawAxiosRequestHeaders, AxiosResponse } from 'axios'
+import env from 'react-dotenv'
 
 export interface RequestStates {
   data: object | null
@@ -21,7 +22,7 @@ interface UseAxios extends RequestStates {
   request: (object: Request) => Promise<Boolean>
 }
 
-const API = '............'
+const API = env.BASE_URL || 'https://deezerconsumer.onrender.com'
 axios.defaults.baseURL = API
 
 const useAxios = (): UseAxios => {
