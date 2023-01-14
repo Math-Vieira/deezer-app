@@ -18,7 +18,7 @@ interface UseAxios extends RequestStates {
   setData: React.Dispatch<React.SetStateAction<object | null>>
   setError: React.Dispatch<React.SetStateAction<object | null>>
   setLoading: React.Dispatch<React.SetStateAction<boolean | null>>
-  request: ({ url, method, body, headers }: Request) => Promise<Boolean>
+  request: (object: Request) => Promise<Boolean>
 }
 
 const API = '............'
