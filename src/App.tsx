@@ -1,5 +1,7 @@
+import AppRoutes from './routes'
+
 const App = (): JSX.Element => {
-  return <div className="App">Learn React</div>
+  return <AppRoutes />
 }
 
 export default App
