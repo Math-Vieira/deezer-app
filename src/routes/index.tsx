@@ -1,10 +1,12 @@
+import { lazy } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from '../layouts/Header'
 import Footer from '../layouts/Footer'
-import Home from '../pages/Home'
-import Favorites from '../pages/Favorites'
-import NotFound from '../pages/NotFound'
 import GlobalContextProvider from '../context/GlobalContext'
+import SuspenseRoute from '../helper/functions/suspense-route'
+const Favorites = lazy(async () => await import('../pages/Favorites'))
+const NotFound = lazy(async () => await import('../pages/NotFound'))
+const Home = lazy(async () => await import('../pages/Home'))
 
 const AppRoutes = (): JSX.Element => {
   return (
@@ -13,9 +15,9 @@ const AppRoutes = (): JSX.Element => {
         <GlobalContextProvider>
           <Header />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/favorites" element={<Favorites />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/" element={SuspenseRoute(<Home />)} />
+            <Route path="/favorites" element={SuspenseRoute(<Favorites />)} />
+            <Route path="*" element={SuspenseRoute(<NotFound />)} />
           </Routes>
           <Footer />
         </GlobalContextProvider>
