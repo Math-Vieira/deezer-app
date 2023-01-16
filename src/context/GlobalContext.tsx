@@ -2,6 +2,7 @@ import React, { createContext, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { ThemeContract, darkTheme } from '../themes/themes'
 import { Props, GlobalContextInterface } from './model'
+import GlobalStyle from '../themes/GlobalStyle'
 
 const initialContext: GlobalContextInterface = {
   favoriteIds: [],
@@ -25,6 +26,7 @@ const GlobalContextProvider = ({ children }: Props): JSX.Element => {
         setTheme
       }}
     >
+      <GlobalStyle />
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </GlobalContext.Provider>
   )
