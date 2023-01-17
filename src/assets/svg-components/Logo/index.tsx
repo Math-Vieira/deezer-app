@@ -1,5 +1,3 @@
-import React from 'react'
-
 const LogoSvg = (): JSX.Element => {
   return (
     <svg
