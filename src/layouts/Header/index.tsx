@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import LightMode from '../../assets/svg-components/LightMode'
 import LogoSvg from '../../assets/svg-components/Logo'
 import * as S from './style'
+import Language from '../../assets/svg-components/Language'
 
 const Header = (): JSX.Element => {
   return (
@@ -25,6 +26,9 @@ const Header = (): JSX.Element => {
             </li>
             <li>
               <LightMode />
+            </li>
+            <li>
+              <Language />
             </li>
           </u>
         </S.Nav>
