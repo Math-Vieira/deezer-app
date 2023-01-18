@@ -26,8 +26,6 @@ const Header = (): JSX.Element => {
             </li>
             <li>
               <LightMode />
-            </li>
-            <li>
               <Language />
             </li>
           </u>
