@@ -5,4 +5,5 @@ export const H2 = styled.h2`
   display: flex;
   align-items: center;
   gap: 1rem;
+  font-size: 1.5rem;
 `
