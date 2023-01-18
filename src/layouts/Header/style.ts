@@ -27,6 +27,11 @@ export const Nav = styled.nav`
     gap: 1.5rem;
   }
 
+  & u li {
+    display: flex;
+    gap: 1rem;
+  }
+
   & u li a {
     color: ${({ theme }) => theme.textColor.secondaryColor};
     font-size: 1.1rem;
