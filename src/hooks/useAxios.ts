@@ -15,7 +15,7 @@ interface Request {
   headers?: RawAxiosRequestHeaders
 }
 
-interface UseAxios extends RequestStates {
+export interface UseAxios extends RequestStates {
   setData: React.Dispatch<React.SetStateAction<object | null>>
   setError: React.Dispatch<React.SetStateAction<object | null>>
   setLoading: React.Dispatch<React.SetStateAction<boolean | null>>
