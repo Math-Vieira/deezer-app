@@ -1,11 +1,12 @@
 {
-	"extends": "standard-with-typescript",
-	"parserOptions": {
-		"project": "./tsconfig.json"
-	},
-	"rules": {
-		"@typescript-eslint/strict-boolean-expressions": "off",
-		"@typescript-eslint/space-before-function-paren": "off",
-		"@typescript-eslint/no-unused-vars": "off"
-	}
+  "extends": "standard-with-typescript",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-confusing-void-expression": "off"
+  }
 }
