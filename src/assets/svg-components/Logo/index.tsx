@@ -7,51 +7,51 @@ const LogoSvg = (): JSX.Element => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1_21)">
+      <g clipPath="url(#clip0_1_21)">
         <path
           d="M0 15.3488H11.1628M0 19.8837H11.1628"
           stroke="white"
-          stroke-width="3.48837"
+          strokeWidth="3.48837"
         />
         <path
           d="M0 24.4186H11.1628M0 28.9535H11.1628M0 33.4884H11.1628"
           stroke="white"
-          stroke-width="3.48837"
+          strokeWidth="3.48837"
         />
         <path
           d="M12.2093 24.4186H23.3721M12.2093 28.9535H23.3721M12.2093 33.4884H23.3721"
           stroke="white"
-          stroke-width="3.48837"
+          strokeWidth="3.48837"
         />
         <path
           d="M24.4186 15.3489H35.5814M24.4186 19.8837H35.5814M24.4186 10.814H35.5814M24.4186 6.27908H35.5814"
           stroke="white"
-          stroke-width="3.48837"
+          strokeWidth="3.48837"
         />
         <path
           d="M24.4186 24.4186H35.5814M24.4186 28.9535H35.5814M24.4186 33.4884H35.5814"
           stroke="white"
-          stroke-width="3.48837"
+          strokeWidth="3.48837"
         />
         <path
           d="M36.6279 15.3488H47.7907M36.6279 19.8837H47.7907"
           stroke="white"
-          stroke-width="3.48837"
+          strokeWidth="3.48837"
         />
         <path
           d="M36.6279 24.4186H47.7907M36.6279 28.9535H47.7907M36.6279 33.4884H47.7907"
           stroke="white"
-          stroke-width="3.48837"
+          strokeWidth="3.48837"
         />
         <path
           d="M48.8372 15.3489H60M48.8372 19.8837H60M48.8372 10.814H60M48.8372 6.27909H60M48.8372 1.7442H60"
           stroke="white"
-          stroke-width="3.48837"
+          strokeWidth="3.48837"
         />
         <path
           d="M48.8372 24.4186H60M48.8372 28.9535H60M48.8372 33.4884H60"
           stroke="white"
-          stroke-width="3.48837"
+          strokeWidth="3.48837"
         />
       </g>
       <path
