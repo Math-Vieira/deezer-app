@@ -3,8 +3,8 @@ import axios, { RawAxiosRequestHeaders, AxiosResponse } from 'axios'
 import env from 'react-dotenv'
 
 export interface RequestStates {
-  data: object | null
-  error: object | null
+  data: any
+  error: any
   loading: boolean | null
 }
 
