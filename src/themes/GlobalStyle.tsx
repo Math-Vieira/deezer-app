@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
   .centralizer {
     margin: 0 auto;
     max-width: 1100px;
-    padding: 0 10px;
+    padding: 0 20px;
   }
 `
 
