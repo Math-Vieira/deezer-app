@@ -8,13 +8,11 @@ export const Header = styled.header`
   top: 0;
   padding: 1rem 0;
   width: 100vw;
-  display: flex;
-  align-items: center;
   box-shadow: ${({ theme }) => theme.headerBoxShadow};
 `
 export const HeaderContentContainer = styled.div`
-  min-width: 90%;
-  padding: 0 1rem;
+  max-width: 1100px;
+  padding: 0 10px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
