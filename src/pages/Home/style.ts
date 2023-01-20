@@ -9,3 +9,8 @@ export const Container = styled.main`
 export const SearchContainer = styled.div`
   width: fit-content;
 `
+
+export const P = styled.p`
+  margin-top: 10px;
+  color: ${({ theme }) => theme.textColor.secondaryColor};
+`
