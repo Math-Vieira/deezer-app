@@ -26,6 +26,25 @@ const GlobalStyle = createGlobalStyle`
     max-width: 1100px;
     padding: 0 20px;
   }
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+      border-radius: 10px;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
 `
 
 export default GlobalStyle
