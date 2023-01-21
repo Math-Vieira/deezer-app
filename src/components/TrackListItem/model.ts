@@ -6,4 +6,5 @@ export interface Props {
   artistName: string
   albumCover: string
   duration: number
+  link: string
 }
