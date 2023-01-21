@@ -11,6 +11,9 @@ export const Li = styled.li`
   & div img {
     height: 40px;
   }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
 export const ContentPart = styled.div`
