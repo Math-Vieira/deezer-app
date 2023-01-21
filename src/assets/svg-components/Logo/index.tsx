@@ -1,6 +1,8 @@
+import * as S from './style'
+
 const LogoSvg = (): JSX.Element => {
   return (
-    <svg
+    <S.Svg
       width="179"
       height="40"
       viewBox="0 0 179 40"
@@ -63,7 +65,7 @@ const LogoSvg = (): JSX.Element => {
           <rect width="60" height="35.2326" fill="white" />
         </clipPath>
       </defs>
-    </svg>
+    </S.Svg>
   )
 }
 
