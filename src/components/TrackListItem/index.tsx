@@ -8,7 +8,8 @@ const TrackListItem = ({
   artistName,
   albumCover,
   duration,
-  link
+  link,
+  fullTrackInfo
 }: Props): JSX.Element => {
   const [formattedDuration, setFormattedDuration] = useState<string>('')
 
@@ -29,7 +30,7 @@ const TrackListItem = ({
         </S.TrackInfo>
       </S.ContentPart>
       <S.ContentPart>
-        <ActionButtons />
+        <ActionButtons fullTrackInfo={fullTrackInfo} link={link} />
       </S.ContentPart>
       <S.Duration>{formattedDuration}</S.Duration>
     </S.Li>
