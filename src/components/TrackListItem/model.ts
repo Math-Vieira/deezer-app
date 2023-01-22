@@ -7,4 +7,5 @@ export interface Props {
   albumCover: string
   duration: number
   link: string
+  fullTrackInfo: any
 }
