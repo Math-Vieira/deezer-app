@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import { createContext, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { ThemeContract, darkTheme } from '../themes/themes'
 import { Props, GlobalContextInterface } from './model'
@@ -9,11 +9,11 @@ const initialContext: GlobalContextInterface = {
   favoriteTracks: []
 }
 
-const GlobalContext = createContext<GlobalContextInterface>(initialContext)
+export const GlobalContext = createContext<GlobalContextInterface>(initialContext)
 
 const GlobalContextProvider = ({ children }: Props): JSX.Element => {
   const [favoriteIds, setFavoriteIds] = useState<number[]>([])
-  const [favoriteTracks, setFavoriteTracks] = useState<object[]>([])
+  const [favoriteTracks, setFavoriteTracks] = useState<any[]>([])
   const [theme, setTheme] = useState<ThemeContract>(darkTheme)
 
   return (
