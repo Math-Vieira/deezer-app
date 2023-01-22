@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import * as S from './style'
 import { Props } from './model'
+import ActionButtons from '../ActionButtons'
 
 const TrackListItem = ({
   title,
@@ -26,6 +27,9 @@ const TrackListItem = ({
           <S.TrackTitle>{title}</S.TrackTitle>
           <S.TrackArtist>{artistName}</S.TrackArtist>
         </S.TrackInfo>
+      </S.ContentPart>
+      <S.ContentPart>
+        <ActionButtons />
       </S.ContentPart>
       <S.Duration>{formattedDuration}</S.Duration>
     </S.Li>
