@@ -7,7 +7,8 @@ import { useEffect, useRef, useState } from 'react'
 const TracksContainer = ({
   tracksList,
   loading,
-  error
+  error,
+  ulRef
 }: Props): JSX.Element => {
   const [currentTrack, setCurrentTrack] = useState<string>('')
   const [playing, setPlaying] = useState<boolean>(false)
@@ -40,7 +41,7 @@ const TracksContainer = ({
         src={currentTrack}
         onEnded={() => setPlaying(false)}
       />
-      <S.Ul>
+      <S.Ul ref={ulRef}>
         {tracksList.map((e) => (
           <TrackListItem
             key={e.id}
