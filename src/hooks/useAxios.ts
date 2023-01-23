@@ -22,7 +22,7 @@ export interface UseAxios extends RequestStates {
   request: (object: Request) => Promise<Boolean>
 }
 
-const API = env.BASE_URL || 'https://deezerconsumer.onrender.com'
+const API = env.BASE_URL || 'http://18.228.170.116:8080/'
 axios.defaults.baseURL = API
 
 const useAxios = (): UseAxios => {
