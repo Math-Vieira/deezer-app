@@ -25,7 +25,7 @@ const TrackListItem = ({
   }, [])
 
   return (
-    <S.Li className="animeLeft-delay">
+    <S.Li className="animeLeft">
       <S.ContentPart>
         <img src={albumCover} alt="album cover" />
         <S.TrackInfo>
