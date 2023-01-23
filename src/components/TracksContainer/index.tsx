@@ -3,6 +3,7 @@ import * as F from './functions'
 import { Props, AudioController } from './model'
 import TrackListItem from '../TrackListItem'
 import { useEffect, useRef, useState } from 'react'
+import LoadingTrackListItem from '../LoadingTrackListItem'
 
 const TracksContainer = ({
   tracksList,
@@ -57,6 +58,7 @@ const TracksContainer = ({
             setPlaying={setPlaying}
           />
         ))}
+        {loading && <LoadingTrackListItem />}
       </S.Ul>
     </>
   )
