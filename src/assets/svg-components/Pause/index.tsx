@@ -9,7 +9,7 @@ const Pause = (): JSX.Element => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1_190)">
+      <g clipPath="url(#clip0_1_190)">
         <path
           d="M-0.0327148 -0.151909H5.08578V19.5165H-0.0327148V-0.151909Z"
           fill="white"
