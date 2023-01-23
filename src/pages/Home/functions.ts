@@ -51,7 +51,6 @@ export const searchSong = async (
     if (scroll > height * 0.9 && !wait) {
       wait = true
       pageNumber += 1
-      console.log('entrei aqui 2')
       await request({
         url: `/search/${searchText}/tracks/10/${pageNumber * 10}`,
         method: 'GET'
