@@ -8,6 +8,7 @@ const Favorite = (): JSX.Element => {
       viewBox="0 0 20 17"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="animeLeft"
     >
       <path
         fillRule="evenodd"
