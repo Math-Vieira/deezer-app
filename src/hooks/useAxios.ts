@@ -15,11 +15,15 @@ interface Request {
   headers?: RawAxiosRequestHeaders
 }
 
+interface RequestReturn {
+  success: boolean
+  data: any
+}
 export interface UseAxios extends RequestStates {
   setData: React.Dispatch<React.SetStateAction<object | null>>
   setError: React.Dispatch<React.SetStateAction<object | null>>
   setLoading: React.Dispatch<React.SetStateAction<boolean | null>>
-  request: (object: Request) => Promise<Boolean>
+  request: (object: Request) => Promise<RequestReturn>
 }
 
 const API = env.BASE_URL || 'https://deezerconsumer.onrender.com'
@@ -37,8 +41,8 @@ const useAxios = (): UseAxios => {
     headers = {
       'Content-Type': 'application/json'
     }
-  }: Request): Promise<Boolean> => {
-    let successRequest: boolean
+  }: Request): Promise<RequestReturn> => {
+    let successRequest: RequestReturn
     try {
       setLoading(true)
       setError(null)
@@ -49,9 +53,9 @@ const useAxios = (): UseAxios => {
         data: body
       })
       setData(response.data)
-      successRequest = true
+      successRequest = { success: true, data: response.data }
     } catch (err: any) {
-      successRequest = false
+      successRequest = { success: false, data: err }
       setError(err)
     }
     return successRequest
