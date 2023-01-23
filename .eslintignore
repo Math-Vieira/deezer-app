@@ -3,3 +3,4 @@ dist
 .env
 .husky/
 public/*
+src/assets/css
