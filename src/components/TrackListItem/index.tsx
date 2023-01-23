@@ -9,7 +9,11 @@ const TrackListItem = ({
   albumCover,
   duration,
   link,
-  fullTrackInfo
+  fullTrackInfo,
+  currentTrack,
+  audioController,
+  playing,
+  setPlaying
 }: Props): JSX.Element => {
   const [formattedDuration, setFormattedDuration] = useState<string>('')
 
@@ -30,7 +34,14 @@ const TrackListItem = ({
         </S.TrackInfo>
       </S.ContentPart>
       <S.ContentPart>
-        <ActionButtons fullTrackInfo={fullTrackInfo} link={link} />
+        <ActionButtons
+          audioController={audioController}
+          currentTrack={currentTrack}
+          fullTrackInfo={fullTrackInfo}
+          link={link}
+          playing={playing}
+          setPlaying={setPlaying}
+        />
       </S.ContentPart>
       <S.Duration>{formattedDuration}</S.Duration>
     </S.Li>
