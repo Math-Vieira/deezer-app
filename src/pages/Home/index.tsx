@@ -12,21 +12,21 @@ const Home = (): JSX.Element => {
   const ulRef = useRef<HTMLUListElement>(null)
   const axiosRequest = useAxios()
   let isInitial = true
-
-  const infiniteScroll = (): void => {
+  const infiniteScrollChart = (): void => {
     void F.getChartSongs(axiosRequest, ulRef, isInitial)
   }
-
   const infiniteScrollSearch = (): void => {
     void F.searchSong(axiosRequest, ulRef, isInitial, searchText)
   }
 
+  // update tracks after every request
   useEffect(() => {
     if (axiosRequest.data) {
       setTracks((prev) => [...prev, ...axiosRequest.data.data])
     }
   }, [axiosRequest.data])
 
+  // requests management
   useEffect(() => {
     if (isInitial && !searchText) {
       void F.getChartSongs(axiosRequest, ulRef, isInitial)
@@ -41,20 +41,18 @@ const Home = (): JSX.Element => {
     }
 
     if (!searchText) {
-      ulRef.current?.addEventListener('wheel', infiniteScroll)
-      ulRef.current?.addEventListener('scroll', infiniteScroll)
+      F.setScrollEventListener(ulRef, infiniteScrollChart)
     } else {
-      ulRef.current?.addEventListener('wheel', infiniteScrollSearch)
-      ulRef.current?.addEventListener('scroll', infiniteScrollSearch)
+      F.setScrollEventListener(ulRef, infiniteScrollSearch)
     }
 
     return () => {
-      ulRef.current?.removeEventListener('wheel', infiniteScroll)
-      ulRef.current?.removeEventListener('scroll', infiniteScroll)
-      ulRef.current?.removeEventListener('wheel', infiniteScrollSearch)
-      ulRef.current?.removeEventListener('scroll', infiniteScrollSearch)
-      setTracks([])
-      F.resetPageNumber()
+      F.clearEventListener(
+        ulRef,
+        infiniteScrollChart,
+        infiniteScrollSearch,
+        setTracks
+      )
       clearTimeout(timeOut)
     }
   }, [searchText])
