@@ -62,6 +62,24 @@ export const searchSong = async (
   }
 }
 
-export const resetPageNumber = (): void => {
+export const setScrollEventListener = (
+  ulRef: React.RefObject<HTMLUListElement>,
+  infiniteScrollFunction: () => void
+): void => {
+  ulRef.current?.addEventListener('wheel', infiniteScrollFunction)
+  ulRef.current?.addEventListener('scroll', infiniteScrollFunction)
+}
+
+export const clearEventListener = (
+  ulRef: React.RefObject<HTMLUListElement>,
+  infiniteScrollFunctionChart: () => void,
+  infiniteScrollFunctionSearch: () => void,
+  setTracks: React.Dispatch<React.SetStateAction<any[]>>
+): void => {
+  ulRef.current?.removeEventListener('wheel', infiniteScrollFunctionChart)
+  ulRef.current?.removeEventListener('scroll', infiniteScrollFunctionChart)
+  ulRef.current?.removeEventListener('wheel', infiniteScrollFunctionSearch)
+  ulRef.current?.removeEventListener('scroll', infiniteScrollFunctionSearch)
+  setTracks([])
   pageNumber = 0
 }
