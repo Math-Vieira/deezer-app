@@ -7,11 +7,27 @@ import * as F from './functions'
 import { useContext, useEffect, useState } from 'react'
 import { GlobalContext } from '../../context/GlobalContext'
 import TrashCan from '../../assets/svg-components/TrashCan'
+import Pause from '../../assets/svg-components/Pause'
 
-const ActionButtons = ({ link, fullTrackInfo }: Props): JSX.Element => {
+const ActionButtons = ({
+  link,
+  fullTrackInfo,
+  audioController,
+  currentTrack,
+  playing,
+  setPlaying
+}: Props): JSX.Element => {
   const { favoriteTracks, setFavoriteTracks } = useContext(GlobalContext)
   const [isFavorite, setIsFavorite] = useState<boolean>(false)
+  const pauseCondition = playing && currentTrack === fullTrackInfo.preview
   const trackId = fullTrackInfo.id
+  const togglePlayInfo = {
+    currentTrack,
+    previewTrack: fullTrackInfo.preview,
+    playing,
+    setPlaying,
+    audioController
+  }
 
   useEffect(() => {
     const findFavorite = favoriteTracks.filter((e) => e.id === fullTrackInfo.id)
@@ -19,8 +35,12 @@ const ActionButtons = ({ link, fullTrackInfo }: Props): JSX.Element => {
   }, [])
   return (
     <S.Container>
-      <S.ActionButton>
-        <Play />
+      <S.ActionButton
+        onClick={() => F.playToggle(togglePlayInfo)}
+        title={pauseCondition ? 'Pausar a música' : 'Ouvir preview'}
+      >
+        {!pauseCondition && <Play />}
+        {pauseCondition && <Pause />}
       </S.ActionButton>
       <S.ActionButton
         title={isFavorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
