@@ -30,7 +30,11 @@ const TrackListItem = ({
       <S.ContentPart>
         <img src={albumCover} alt="album cover" />
         <S.TrackInfo>
-          <S.TrackTitle>{title}</S.TrackTitle>
+          <S.TrackTitle>
+            <div className={title.length >= 30 ? 'animated-text' : ''}>
+              {title}
+            </div>
+          </S.TrackTitle>
           <S.TrackArtist>{artistName}</S.TrackArtist>
         </S.TrackInfo>
       </S.ContentPart>
