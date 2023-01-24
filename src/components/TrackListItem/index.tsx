@@ -31,12 +31,12 @@ const TrackListItem = ({
         <img src={albumCover} alt="album cover" />
         <S.TrackInfo>
           <S.TrackTitle>
-            <div className={title.length >= 30 ? 'animated-text' : ''}>
+            <div className={title.length >= 26 ? 'animated-text' : ''}>
               {title}
             </div>
           </S.TrackTitle>
           <S.TrackArtist>
-            <div className={artistName.length >= 30 ? 'animated-text' : ''}>
+            <div className={artistName.length >= 26 ? 'animated-text' : ''}>
               {artistName}
             </div>
           </S.TrackArtist>

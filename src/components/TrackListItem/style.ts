@@ -33,7 +33,7 @@ export const TrackTitle = styled.div`
   color: ${({ theme }) => theme.textColor.primaryColor};
   white-space: nowrap;
   overflow-x: hidden;
-  max-width: 250px;
+  max-width: 200px;
 `
 
 export const TrackArtist = styled.div`
@@ -41,7 +41,7 @@ export const TrackArtist = styled.div`
   margin-left: 4px;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 250px;
+  max-width: 200px;
 `
 
 export const Duration = styled.div`
