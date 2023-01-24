@@ -6,10 +6,13 @@ import * as S from './style'
 import * as F from './functions'
 import TracksContainer from '../../components/TracksContainer'
 import Head from '../../helper/components/Head'
+import CardTrackInfo from '../../components/CardTrackInfo'
+import { CurrentTrack } from './model'
 
 const Home = (): JSX.Element => {
   const [searchText, setSearchText] = useState<string>('')
   const [tracks, setTracks] = useState<any[]>([])
+  const [currentTrack, setCurrentTrack] = useState<CurrentTrack | null>(null)
   const ulRef = useRef<HTMLUListElement>(null)
   const axiosRequest = useAxios()
   let isInitial = true
@@ -55,12 +58,13 @@ const Home = (): JSX.Element => {
         setTracks
       )
       clearTimeout(timeOut)
+      setCurrentTrack(null)
     }
   }, [searchText])
 
   return (
     <>
-    <Head title='Deezer App | Início'/>
+      <Head title="Deezer App | Início" />
       <S.Container>
         <section className="centralizer">
           <S.SearchContainer>
@@ -76,12 +80,20 @@ const Home = (): JSX.Element => {
           <S.P>
             {searchText ? 'Resultados da pesquisa:' : 'Músicas do momento:'}
           </S.P>
-          <TracksContainer
-            ulRef={ulRef}
-            tracksList={tracks}
-            loading={axiosRequest.loading}
-            error={axiosRequest.error}
-          />
+          <S.Tracks>
+            <TracksContainer
+              ulRef={ulRef}
+              tracksList={tracks}
+              loading={axiosRequest.loading}
+              error={axiosRequest.error}
+              setCurrentTrackInfo={setCurrentTrack}
+            />
+            <CardTrackInfo
+              title={currentTrack?.title}
+              artist={currentTrack?.artist}
+              background={currentTrack?.background}
+            />
+          </S.Tracks>
         </section>
       </S.Container>
     </>
