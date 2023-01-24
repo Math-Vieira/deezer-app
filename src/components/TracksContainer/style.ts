@@ -5,6 +5,9 @@ export const Ul = styled.ul`
   max-height: 30rem;
   overflow-y: scroll;
   width: 45%;
+  @media (max-width: 980px) {
+    width: 100%;
+  }
 `
 export const NotFoundMessage = styled.li`
   font-size: 25px;
