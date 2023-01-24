@@ -5,6 +5,7 @@ import useAxios from '../../hooks/useAxios'
 import * as S from './style'
 import * as F from './functions'
 import TracksContainer from '../../components/TracksContainer'
+import Head from '../../helper/components/Head'
 
 const Home = (): JSX.Element => {
   const [searchText, setSearchText] = useState<string>('')
@@ -58,29 +59,32 @@ const Home = (): JSX.Element => {
   }, [searchText])
 
   return (
-    <S.Container>
-      <section className="centralizer">
-        <S.SearchContainer>
-          <H2Text>Pesquise por uma música</H2Text>
-          <Input
-            placeholder="Pesquise uma música..."
-            id="search-song"
-            type="text"
-            value={searchText}
-            setValue={setSearchText}
+    <>
+    <Head title='Deezer App | Início'/>
+      <S.Container>
+        <section className="centralizer">
+          <S.SearchContainer>
+            <H2Text>Pesquise por uma música</H2Text>
+            <Input
+              placeholder="Pesquise uma música..."
+              id="search-song"
+              type="text"
+              value={searchText}
+              setValue={setSearchText}
+            />
+          </S.SearchContainer>
+          <S.P>
+            {searchText ? 'Resultados da pesquisa:' : 'Músicas do momento:'}
+          </S.P>
+          <TracksContainer
+            ulRef={ulRef}
+            tracksList={tracks}
+            loading={axiosRequest.loading}
+            error={axiosRequest.error}
           />
-        </S.SearchContainer>
-        <S.P>
-          {searchText ? 'Resultados da pesquisa:' : 'Músicas do momento:'}
-        </S.P>
-        <TracksContainer
-          ulRef={ulRef}
-          tracksList={tracks}
-          loading={axiosRequest.loading}
-          error={axiosRequest.error}
-        />
-      </section>
-    </S.Container>
+        </section>
+      </S.Container>
+    </>
   )
 }
 
