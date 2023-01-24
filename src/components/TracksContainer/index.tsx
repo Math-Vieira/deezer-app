@@ -9,7 +9,8 @@ const TracksContainer = ({
   tracksList,
   loading,
   error,
-  ulRef
+  ulRef,
+  setCurrentTrackInfo
 }: Props): JSX.Element => {
   const [currentTrack, setCurrentTrack] = useState<string>('')
   const [playing, setPlaying] = useState<boolean>(false)
@@ -56,6 +57,7 @@ const TracksContainer = ({
             currentTrack={currentTrack}
             playing={playing}
             setPlaying={setPlaying}
+            setCurrentTrackInfo={setCurrentTrackInfo}
           />
         ))}
         {loading && <LoadingTrackListItem />}
