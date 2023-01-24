@@ -6,6 +6,7 @@ export interface Props {
   ulRef?: React.RefObject<HTMLUListElement>
   setCurrentTrackInfo: React.Dispatch<React.SetStateAction<CurrentTrack | null>>
   searchText: string
+  favorites?: boolean
 }
 
 export interface AudioController {
