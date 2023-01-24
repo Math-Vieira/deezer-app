@@ -1,0 +1,9 @@
+{
+  "section": {
+    "searchSongs": "Search in favorites",
+    "searchSongsPlaceHolder": "Search...",
+    "favorites": "Favorites:",
+    "searchResults": "Search results:",
+    "trackNotFound": "Track not found"
+  }
+}

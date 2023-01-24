@@ -1,0 +1,9 @@
+{
+  "section": {
+    "searchSongs": "Pesquise nos favoritos",
+    "searchSongsPlaceHolder": "Pesquise uma música...",
+    "favorites": "Favoritos:",
+    "searchResults": "Resultados da pesquisa:",
+    "trackNotFound": "Nenhuma música encontrada"
+  }
+}

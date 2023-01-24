@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "home": "Início",
+    "favorites": "Favoritos"
+  },
+  "section": {
+    "searchSongs": "Pesquise por uma música",
+    "searchSongsPlaceHolder": "Pesquise uma música...",
+    "chartSongs": "Músicas do momento:",
+    "searchResults": "Resultados da pesquisa:"
+  }
+}
