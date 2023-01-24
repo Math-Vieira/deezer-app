@@ -11,6 +11,23 @@
   animation-delay: 0.7s;
 }
 
+.animated-text {
+  animation: move-half-right-to-left 10s linear infinite;
+}
+
+@keyframes move-half-right-to-left {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
 @keyframes animeLeft {
   to {
     opacity: 1;
