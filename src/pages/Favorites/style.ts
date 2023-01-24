@@ -4,7 +4,7 @@ export const Container = styled.main`
   background-color: ${({ theme }) => theme.mainColor};
   min-height: 100vh;
   padding-top: 10rem;
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
 `
 
 export const SearchContainer = styled.div`
