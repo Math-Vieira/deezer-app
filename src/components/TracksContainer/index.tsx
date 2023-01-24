@@ -11,7 +11,8 @@ const TracksContainer = ({
   error,
   ulRef,
   setCurrentTrackInfo,
-  searchText
+  searchText,
+  favorites
 }: Props): JSX.Element => {
   const [currentTrack, setCurrentTrack] = useState<string>('')
   const [playing, setPlaying] = useState<boolean>(false)
@@ -29,6 +30,13 @@ const TracksContainer = ({
       audioRef
     })
   }
+
+  useEffect(() => {
+    if (favorites) {
+      setCurrentTrack('')
+      setPlaying(false)
+    }
+  }, [tracksList])
 
   useEffect(() => {
     setCurrentTrack('')
@@ -67,6 +75,9 @@ const TracksContainer = ({
           />
         ))}
         {loading && <LoadingTrackListItem />}
+        {!tracksList.length && !loading && (
+          <S.NotFoundMessage>Nenhuma música encontrada</S.NotFoundMessage>
+        )}
       </S.Ul>
     </>
   )
