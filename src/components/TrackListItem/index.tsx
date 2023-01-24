@@ -13,7 +13,8 @@ const TrackListItem = ({
   currentTrack,
   audioController,
   playing,
-  setPlaying
+  setPlaying,
+  setCurrentTrackInfo
 }: Props): JSX.Element => {
   const [formattedDuration, setFormattedDuration] = useState<string>('')
 
@@ -41,6 +42,7 @@ const TrackListItem = ({
           link={link}
           playing={playing}
           setPlaying={setPlaying}
+          setCurrentTrackInfo={setCurrentTrackInfo}
         />
       </S.ContentPart>
       <S.Duration>{formattedDuration}</S.Duration>
