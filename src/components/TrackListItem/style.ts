@@ -41,6 +41,7 @@ export const TrackArtist = styled.div`
   margin-left: 4px;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 250px;
 `
 
 export const Duration = styled.div`
