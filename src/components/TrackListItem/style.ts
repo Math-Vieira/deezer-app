@@ -14,6 +14,9 @@ export const Li = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 770px) {
+    flex-direction: column;
+  }
 `
 
 export const ContentPart = styled.div`
@@ -21,12 +24,18 @@ export const ContentPart = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
+  @media (max-width: 770px) {
+    flex-direction: column;
+  }
 `
 
 export const TrackInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: -2px;
+  @media (max-width: 770px) {
+    align-items: center;
+  }
 `
 
 export const TrackTitle = styled.div`
@@ -34,6 +43,13 @@ export const TrackTitle = styled.div`
   white-space: nowrap;
   overflow-x: hidden;
   max-width: 200px;
+  @media (max-width: 980px) {
+    max-width: 100%;
+    white-space: normal;
+  }
+  @media (max-width: 770px) {
+    text-align: center;
+  }
 `
 
 export const TrackArtist = styled.div`
@@ -42,6 +58,14 @@ export const TrackArtist = styled.div`
   white-space: nowrap;
   overflow: hidden;
   max-width: 200px;
+  @media (max-width: 980px) {
+    max-width: 100%;
+    white-space: normal;
+  }
+  @media (max-width: 770px) {
+    margin-left: 0;
+    text-align: center;
+  }
 `
 
 export const Duration = styled.div`
