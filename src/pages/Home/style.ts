@@ -5,6 +5,9 @@ export const Container = styled.main`
   min-height: 100vh;
   padding-top: 10rem;
   padding-bottom: 4rem;
+  @media (max-width: 980px) {
+    padding-top: 5rem;
+  }
 `
 
 export const SearchContainer = styled.div`
