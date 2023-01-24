@@ -9,6 +9,7 @@ import CardTrackInfo from '../../components/CardTrackInfo'
 import { CurrentTrack } from './model'
 import { GlobalContext } from '../../context/GlobalContext'
 import useMediaQuery from '../../hooks/useMediaQuery'
+import { useTranslation } from 'react-i18next'
 
 const Favorites = (): JSX.Element => {
   const [searchText, setSearchText] = useState<string>('')
@@ -16,6 +17,7 @@ const Favorites = (): JSX.Element => {
   const { favoriteTracks } = useContext(GlobalContext)
   const [tracks, setTracks] = useState<any[] | null>(null)
   const ulRef = useRef<HTMLUListElement>(null)
+  const { t } = useTranslation()
   const isMobile = useMediaQuery('(max-width: 980px)')
 
   useEffect(() => {
@@ -35,20 +37,24 @@ const Favorites = (): JSX.Element => {
 
   return (
     <>
-      <Head title="Deezer App | Favoritos" />
+      <Head title={`Deezer App | ${t('Home:nav.favorites')}`} />
       <S.Container>
         <section className="centralizer">
           <S.SearchContainer>
-            <H2Text>Pesquise nos favoritos</H2Text>
+            <H2Text>{t('Favorites:section.searchSongs')}</H2Text>
             <Input
-              placeholder="Pesquise uma música..."
+              placeholder={t('Favorites:section.searchSongsPlaceHolder')}
               id="search-song"
               type="text"
               value={searchText}
               setValue={setSearchText}
             />
           </S.SearchContainer>
-          <S.P>{searchText ? 'Resultados da pesquisa:' : 'Favoritos:'}</S.P>
+          <S.P>
+            {searchText
+              ? t('Favorites:section.searchResults')
+              : t('Favorites:section.favorites')}
+          </S.P>
           <S.Tracks>
             <TracksContainer
               ulRef={ulRef}

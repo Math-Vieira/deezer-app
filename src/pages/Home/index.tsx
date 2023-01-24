@@ -9,6 +9,7 @@ import Head from '../../helper/components/Head'
 import CardTrackInfo from '../../components/CardTrackInfo'
 import { CurrentTrack } from './model'
 import useMediaQuery from '../../hooks/useMediaQuery'
+import { useTranslation } from 'react-i18next'
 
 const Home = (): JSX.Element => {
   const [searchText, setSearchText] = useState<string>('')
@@ -16,6 +17,7 @@ const Home = (): JSX.Element => {
   const [currentTrack, setCurrentTrack] = useState<CurrentTrack | null>(null)
   const isMobile = useMediaQuery('(max-width: 980px)')
   const ulRef = useRef<HTMLUListElement>(null)
+  const { t } = useTranslation()
   const axiosRequest = useAxios()
   let isInitial = true
   const infiniteScrollChart = (): void => {
@@ -66,13 +68,13 @@ const Home = (): JSX.Element => {
 
   return (
     <>
-      <Head title="Deezer App | Início" />
+      <Head title={`Deezer App | ${t('Home:nav.home')}`} />
       <S.Container>
         <section className="centralizer">
           <S.SearchContainer>
-            <H2Text>Pesquise por uma música</H2Text>
+            <H2Text>{t('Home:section.searchSongs')}</H2Text>
             <Input
-              placeholder="Pesquise uma música..."
+              placeholder={t('Home:section.searchSongsPlaceHolder')}
               id="search-song"
               type="text"
               value={searchText}
@@ -80,7 +82,9 @@ const Home = (): JSX.Element => {
             />
           </S.SearchContainer>
           <S.P>
-            {searchText ? 'Resultados da pesquisa:' : 'Músicas do momento:'}
+            {searchText
+              ? t('Home:section.searchResults')
+              : t('Home:section.chartSongs')}
           </S.P>
           <S.Tracks>
             <TracksContainer

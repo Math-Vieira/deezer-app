@@ -4,6 +4,7 @@ import { Props, AudioController } from './model'
 import TrackListItem from '../TrackListItem'
 import { useEffect, useRef, useState } from 'react'
 import LoadingTrackListItem from '../LoadingTrackListItem'
+import { useTranslation } from 'react-i18next'
 
 const TracksContainer = ({
   tracksList,
@@ -17,6 +18,7 @@ const TracksContainer = ({
   const [currentTrack, setCurrentTrack] = useState<string>('')
   const [playing, setPlaying] = useState<boolean>(false)
   const audioRef = useRef<HTMLAudioElement>(null)
+  const { t } = useTranslation()
 
   const audioController = ({
     previewTrack,
@@ -76,7 +78,7 @@ const TracksContainer = ({
         ))}
         {loading && <LoadingTrackListItem />}
         {!tracksList.length && !loading && (
-          <S.NotFoundMessage>Nenhuma música encontrada</S.NotFoundMessage>
+          <S.NotFoundMessage>{t('Favorites:section.trackNotFound')}</S.NotFoundMessage>
         )}
       </S.Ul>
     </>
