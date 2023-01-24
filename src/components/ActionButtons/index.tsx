@@ -15,7 +15,8 @@ const ActionButtons = ({
   audioController,
   currentTrack,
   playing,
-  setPlaying
+  setPlaying,
+  setCurrentTrackInfo
 }: Props): JSX.Element => {
   const { favoriteTracks, setFavoriteTracks } = useContext(GlobalContext)
   const [isFavorite, setIsFavorite] = useState<boolean>(false)
@@ -26,7 +27,11 @@ const ActionButtons = ({
     previewTrack: fullTrackInfo.preview,
     playing,
     setPlaying,
-    audioController
+    audioController,
+    setCurrentTrackInfo,
+    artist: fullTrackInfo.artist.name,
+    title: fullTrackInfo.title,
+    background: fullTrackInfo.album.cover_big
   }
 
   useEffect(() => {
