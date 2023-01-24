@@ -87,6 +87,7 @@ const Home = (): JSX.Element => {
               loading={axiosRequest.loading}
               error={axiosRequest.error}
               setCurrentTrackInfo={setCurrentTrack}
+              searchText={searchText}
             />
             <CardTrackInfo
               title={currentTrack?.title}
