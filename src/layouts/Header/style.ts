@@ -9,6 +9,7 @@ export const Header = styled.header`
   padding: 1rem 0;
   width: 100vw;
   box-shadow: ${({ theme }) => theme.headerBoxShadow};
+  z-index: 5;
 `
 export const HeaderContentContainer = styled.div`
   max-width: 1100px;
