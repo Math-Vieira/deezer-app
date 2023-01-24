@@ -6,7 +6,7 @@ export interface Props {
 
 export interface GlobalContextInterface {
   favoriteTracks: any[]
-  setFavoriteIds?: React.Dispatch<React.SetStateAction<number[]>>
   setFavoriteTracks?: React.Dispatch<React.SetStateAction<any[]>>
-  setTheme?: React.Dispatch<React.SetStateAction<ThemeContract>>
+  toggleTheme?: () => void
+  themeId?: number
 }
