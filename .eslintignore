@@ -4,3 +4,4 @@ dist
 .husky/
 public/*
 src/assets/css
+src/assets/i18n
