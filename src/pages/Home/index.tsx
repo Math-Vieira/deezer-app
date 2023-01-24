@@ -8,11 +8,13 @@ import TracksContainer from '../../components/TracksContainer'
 import Head from '../../helper/components/Head'
 import CardTrackInfo from '../../components/CardTrackInfo'
 import { CurrentTrack } from './model'
+import useMediaQuery from '../../hooks/useMediaQuery'
 
 const Home = (): JSX.Element => {
   const [searchText, setSearchText] = useState<string>('')
   const [tracks, setTracks] = useState<any[]>([])
   const [currentTrack, setCurrentTrack] = useState<CurrentTrack | null>(null)
+  const isMobile = useMediaQuery('(max-width: 980px)')
   const ulRef = useRef<HTMLUListElement>(null)
   const axiosRequest = useAxios()
   let isInitial = true
@@ -89,11 +91,13 @@ const Home = (): JSX.Element => {
               setCurrentTrackInfo={setCurrentTrack}
               searchText={searchText}
             />
-            <CardTrackInfo
-              title={currentTrack?.title}
-              artist={currentTrack?.artist}
-              background={currentTrack?.background}
-            />
+            {!isMobile && (
+              <CardTrackInfo
+                title={currentTrack?.title}
+                artist={currentTrack?.artist}
+                background={currentTrack?.background}
+              />
+            )}
           </S.Tracks>
         </section>
       </S.Container>
