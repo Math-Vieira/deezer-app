@@ -10,7 +10,8 @@ const TracksContainer = ({
   loading,
   error,
   ulRef,
-  setCurrentTrackInfo
+  setCurrentTrackInfo,
+  searchText
 }: Props): JSX.Element => {
   const [currentTrack, setCurrentTrack] = useState<string>('')
   const [playing, setPlaying] = useState<boolean>(false)
@@ -28,6 +29,11 @@ const TracksContainer = ({
       audioRef
     })
   }
+
+  useEffect(() => {
+    setCurrentTrack('')
+    setPlaying(false)
+  }, [searchText])
 
   useEffect(() => {
     if (currentTrack && audioRef.current) {

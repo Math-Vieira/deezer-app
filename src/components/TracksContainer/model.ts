@@ -5,6 +5,7 @@ export interface Props {
   error?: any
   ulRef?: React.RefObject<HTMLUListElement>
   setCurrentTrackInfo: React.Dispatch<React.SetStateAction<CurrentTrack | null>>
+  searchText: string
 }
 
 export interface AudioController {
