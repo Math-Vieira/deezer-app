@@ -1,13 +1,11 @@
-import React from 'react'
 import * as S from './style'
-import Head from '../../helper/components/Head'
 
 const NotFound = (): JSX.Element => {
   return (
-    <>
-      <Head title="Deezer App | Não encontrado"/>
-      <S.Container>NotFound</S.Container>
-    </>
+    <S.Container>
+      <S.InnerContent>Página não encontrada</S.InnerContent>
+      <a href="/">Clique aqui para retornar ao início</a>
+    </S.Container>
   )
 }
 
