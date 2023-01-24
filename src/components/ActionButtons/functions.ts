@@ -1,4 +1,5 @@
 import { AudioController } from '../TracksContainer/model'
+import { CurrentTrack } from '../../pages/Home/model'
 
 interface ChangeFavoriteState {
   isFavorite: boolean
@@ -14,6 +15,10 @@ interface PlayToggle {
   playing: boolean
   setPlaying: React.Dispatch<React.SetStateAction<boolean>>
   audioController: (object: AudioController) => void
+  setCurrentTrackInfo: React.Dispatch<React.SetStateAction<CurrentTrack | null>>
+  artist: string
+  title: string
+  background: string
 }
 
 export const openTrackLink = (url: string): void => {
@@ -44,7 +49,11 @@ export const playToggle = ({
   previewTrack,
   playing,
   setPlaying,
-  audioController
+  audioController,
+  setCurrentTrackInfo,
+  artist,
+  background,
+  title
 }: PlayToggle): void => {
   if (currentTrack === previewTrack && !playing) {
     audioController({ previewTrack, command: 'PLAY' })
@@ -60,12 +69,14 @@ export const playToggle = ({
 
   if (currentTrack !== previewTrack && !playing) {
     audioController({ previewTrack, command: 'PLAY' })
+    setCurrentTrackInfo({ artist, background, title })
     setPlaying(true)
     return
   }
 
   if (currentTrack !== previewTrack && playing) {
     audioController({ previewTrack, command: 'PLAY' })
+    setCurrentTrackInfo({ artist, background, title })
     setPlaying(true)
   }
 }
