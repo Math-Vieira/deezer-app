@@ -35,7 +35,11 @@ const TrackListItem = ({
               {title}
             </div>
           </S.TrackTitle>
-          <S.TrackArtist>{artistName}</S.TrackArtist>
+          <S.TrackArtist>
+            <div className={artistName.length >= 30 ? 'animated-text' : ''}>
+              {artistName}
+            </div>
+          </S.TrackArtist>
         </S.TrackInfo>
       </S.ContentPart>
       <S.ContentPart>
