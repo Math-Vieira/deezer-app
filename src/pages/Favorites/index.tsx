@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import H2Text from '../../components/H2Text'
 import Input from '../../components/Input'
 import * as S from './style'
+import * as F from './functions'
 import TracksContainer from '../../components/TracksContainer'
 import Head from '../../helper/components/Head'
 import CardTrackInfo from '../../components/CardTrackInfo'
@@ -12,13 +13,23 @@ const Favorites = (): JSX.Element => {
   const [searchText, setSearchText] = useState<string>('')
   const [currentTrack, setCurrentTrack] = useState<CurrentTrack | null>(null)
   const { favoriteTracks } = useContext(GlobalContext)
+  const [tracks, setTracks] = useState<any[] | null>(null)
   const ulRef = useRef<HTMLUListElement>(null)
 
   useEffect(() => {
     setCurrentTrack(null)
   }, [favoriteTracks])
 
-  useEffect(() => {}, [searchText])
+  useEffect(() => {
+    if (!searchText) {
+      setTracks(null)
+    } else {
+      const filteredTracks = favoriteTracks.filter((e) => {
+        return F.filterTracks(e, searchText)
+      })
+      setTracks(filteredTracks)
+    }
+  }, [searchText])
 
   return (
     <>
@@ -39,7 +50,7 @@ const Favorites = (): JSX.Element => {
           <S.Tracks>
             <TracksContainer
               ulRef={ulRef}
-              tracksList={favoriteTracks}
+              tracksList={tracks ?? favoriteTracks}
               setCurrentTrackInfo={setCurrentTrack}
               searchText={searchText}
               favorites={true}
