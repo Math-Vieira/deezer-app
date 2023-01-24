@@ -5,7 +5,6 @@ export interface Props {
 }
 
 export interface GlobalContextInterface {
-  favoriteIds: number[]
   favoriteTracks: any[]
   setFavoriteIds?: React.Dispatch<React.SetStateAction<number[]>>
   setFavoriteTracks?: React.Dispatch<React.SetStateAction<any[]>>
