@@ -1,46 +1,68 @@
-# Getting Started with Create React App
+<h1>:blue_car: <a href="https://deezer-app-mv.vercel.app/">Deezer App</a></h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div style="display: inline_block">
+<img src="https://img.shields.io/badge/TypeScript-brightgreen"/>
+<img src="https://img.shields.io/badge/ReactJs-brightgreen"/>
+<img src="https://img.shields.io/badge/Styled Components-brightgreen"/>
+<img src="https://img.shields.io/badge/Prettier-brightgreen"/>
+<img src="https://img.shields.io/badge/Eslint-brightgreen"/>
+<img src="https://img.shields.io/badge/i18next-brightgreen"/>
+</div>
 
-## Available Scripts
+<img src ="https://cdn.discordapp.com/attachments/908101448112431115/1067589158098444348/image.png" />
 
-In the project directory, you can run:
+<h2>:bookmark_tabs: Descrição</h2>
+<p>Este projeto é uma aplicação web desenvolvida com React que permite pesquisar músicas e visualizar as músicas mais populares utilizando a API do Deezer. Ele foi desenvolvido com TypeScript, garantindo uma maior segurança e organização do código, além de permitir uma melhor escalabilidade do projeto. O projeto também utiliza styled-components, permitindo uma maior flexibilidade no estilo da aplicação e tornando o desenvolvimento mais fácil e rápido.</p>
 
-### `npm start`
+<a href="https://www.figma.com/file/4etJg79VOy7PPb3X2XHOji/CAM-Tecnologia?node-id=0%3A1&t=ENWKh6I1uYOoWvdB-1">Clique aqui para ver o design do projeto</a>
+<p>Ps: O projeto não seguiu o design `a rista, mas está fortemente baseado nele.</p>
+<a href="https://deezer-app-mv.vercel.app/">Você pode visualizar o projeto no ar clicando aqui</a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h2>:grinning: Como utilizar</h2>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h3>1. Clone o repositório:</h3>
+<pre>
+  <code>
+    git clone https://github.com/Math-Vieira/deezer-app
+  </code>
+</pre>
 
-### `npm test`
+<h3>2. Instale as dependências:</h3>
+<pre>
+  <code>
+    npm install
+  </code>
+</pre>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h3>3. Clone também o repositório abaixo e inicie o servidor antes de retornar para a aplicação react:</h3>
+<a href="https://github.com/Math-Vieira/deezer-api-consumer">Clique aqui</a>
 
-### `npm run build`
+<h3>4. Configure o .env:</h3>
+<p>Após realizar o passo 3, volte para a aplicação react e crie um arquivo .env como mostra o exemplo atualmente na aplicação.
+Você pode deixar a BASE_URL = http://localhost:8080/, já que é a porta onde o servidor estará rodando. </p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h3>5. Inicie o servidor React</h3>
+<pre>
+  <code>
+    npm start
+  </code>
+</pre>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p>Após realizar esta sequência de passos a aplicação já estará pronta para ser utilizada </p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h2>:hammer: Créditos</h2>
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Math-Vieira">
+        <img src="https://cdn.discordapp.com/attachments/908101448112431115/964905499613077504/me.png" width="100px;" alt="Foto do Matheus Vieira"/><br>
+        <sub>
+          <b>Matheus Vieira</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h2>:dollar: Licença</h2>
+<b>Este projeto está sob a licença MIT</b>
