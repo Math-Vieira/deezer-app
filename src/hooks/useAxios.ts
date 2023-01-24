@@ -57,6 +57,8 @@ const useAxios = (): UseAxios => {
     } catch (err: any) {
       successRequest = { success: false, data: err }
       setError(err)
+    } finally {
+      setLoading(false)
     }
     return successRequest
   }
