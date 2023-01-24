@@ -1,5 +1,5 @@
-import React from 'react'
 import { AudioController } from '../TracksContainer/model'
+import { CurrentTrack } from '../../pages/Home/model'
 
 export interface Props {
   key: React.Key
@@ -13,4 +13,5 @@ export interface Props {
   currentTrack: string
   playing: boolean
   setPlaying: React.Dispatch<React.SetStateAction<boolean>>
+  setCurrentTrackInfo: React.Dispatch<React.SetStateAction<CurrentTrack | null>>
 }
