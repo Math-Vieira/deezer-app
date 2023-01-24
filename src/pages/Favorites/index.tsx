@@ -8,6 +8,7 @@ import Head from '../../helper/components/Head'
 import CardTrackInfo from '../../components/CardTrackInfo'
 import { CurrentTrack } from './model'
 import { GlobalContext } from '../../context/GlobalContext'
+import useMediaQuery from '../../hooks/useMediaQuery'
 
 const Favorites = (): JSX.Element => {
   const [searchText, setSearchText] = useState<string>('')
@@ -15,6 +16,7 @@ const Favorites = (): JSX.Element => {
   const { favoriteTracks } = useContext(GlobalContext)
   const [tracks, setTracks] = useState<any[] | null>(null)
   const ulRef = useRef<HTMLUListElement>(null)
+  const isMobile = useMediaQuery('(max-width: 980px)')
 
   useEffect(() => {
     setCurrentTrack(null)
@@ -55,11 +57,13 @@ const Favorites = (): JSX.Element => {
               searchText={searchText}
               favorites={true}
             />
-            <CardTrackInfo
-              title={currentTrack?.title}
-              artist={currentTrack?.artist}
-              background={currentTrack?.background}
-            />
+            {!isMobile && (
+              <CardTrackInfo
+                title={currentTrack?.title}
+                artist={currentTrack?.artist}
+                background={currentTrack?.background}
+              />
+            )}
           </S.Tracks>
         </section>
       </S.Container>
