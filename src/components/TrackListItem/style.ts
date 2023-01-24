@@ -31,13 +31,16 @@ export const TrackInfo = styled.div`
 
 export const TrackTitle = styled.div`
   color: ${({ theme }) => theme.textColor.primaryColor};
-  max-height: 25px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  max-width: 250px;
 `
 
 export const TrackArtist = styled.div`
   color: ${({ theme }) => theme.textColor.secondaryColor};
   margin-left: 4px;
-  max-height: 25px;
+  white-space: nowrap;
+  overflow: hidden;
 `
 
 export const Duration = styled.div`
