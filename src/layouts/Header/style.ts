@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-export const Header = styled.header`
+export const Header = styled.header<{ mobileMenu: boolean }>`
   background-color: ${({ theme }) => theme.headerBackground};
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(10px);
   color: red;
   position: fixed;
   top: 0;
@@ -10,6 +10,10 @@ export const Header = styled.header`
   width: 100vw;
   box-shadow: ${({ theme }) => theme.headerBoxShadow};
   z-index: 5;
+  @media (max-width: 980px) {
+    height: 100vh;
+    top: ${({ mobileMenu }) => (mobileMenu ? '-102vh' : 0)};
+  }
 `
 export const HeaderContentContainer = styled.div`
   max-width: 1100px;
@@ -18,6 +22,12 @@ export const HeaderContentContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 980px) {
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
 `
 
 export const Nav = styled.nav`
@@ -43,5 +53,21 @@ export const Nav = styled.nav`
 
   & u li .active {
     color: ${({ theme }) => theme.textColor.primaryColor};
+  }
+
+  @media (max-width: 980px) {
+    & u {
+      flex-direction: column;
+      align-items: center;
+    }
+    & u li {
+      flex-direction: column;
+      align-items: center;
+    }
+    & u li a {
+      color: ${({ theme }) => theme.textColor.secondaryColor};
+      font-size: 1.5rem;
+      font-family: 'Saira', sans-serif;
+    }
   }
 `
