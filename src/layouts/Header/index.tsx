@@ -33,10 +33,7 @@ const Header = (): JSX.Element => {
   return (
     <>
       {isMobile && (
-        <MobileMenu
-          mobileMenu={mobileMenu}
-          toggleMobile={toggleMenu}
-        />
+        <MobileMenu mobileMenu={mobileMenu} toggleMobile={toggleMenu} />
       )}
 
       <S.Header mobileMenu={mobileMenu && isMobile}>
@@ -62,7 +59,7 @@ const Header = (): JSX.Element => {
                   {themeId === 2 && <DarkMode />}
                 </span>
                 <span onClick={toggleLanguage}>
-                  <Language />
+                  <Language language={language} />
                 </span>
               </li>
             </u>

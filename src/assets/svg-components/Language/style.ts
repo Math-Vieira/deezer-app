@@ -9,3 +9,7 @@ export const Svg = styled.svg`
     fill: ${({ theme }) => theme.textColor.primaryColor};
   }
 `
+
+export const Container = styled.div`
+  position: relative;
+`
