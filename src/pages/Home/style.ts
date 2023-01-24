@@ -15,3 +15,8 @@ export const P = styled.p`
   margin-top: 10px;
   color: ${({ theme }) => theme.textColor.secondaryColor};
 `
+
+export const Tracks = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
