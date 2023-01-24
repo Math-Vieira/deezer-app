@@ -20,7 +20,7 @@ export const Container = styled.div`
   .bar3 {
     width: 35px;
     height: 5px;
-    background-color: ${({ theme }) => theme.textColor.primaryColor};
+    background-color: ${({ theme }) => theme.textColor.tertiaryColor};
     margin: 6px 0;
     transition: 0.4s;
     border-radius: 2px;
