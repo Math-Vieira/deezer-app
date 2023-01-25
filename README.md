@@ -12,7 +12,7 @@
 <img src ="https://cdn.discordapp.com/attachments/908101448112431115/1067589158098444348/image.png" />
 
 <h2>:bookmark_tabs: Descrição</h2>
-<p>Este projeto é uma aplicação web desenvolvida com React que permite pesquisar músicas e visualizar as músicas mais populares utilizando a API do Deezer. Ele foi desenvolvido com TypeScript, garantindo uma maior segurança e organização do código, além de permitir uma melhor escalabilidade do projeto. O projeto também utiliza styled-components, permitindo uma maior flexibilidade no estilo da aplicação e tornando o desenvolvimento mais fácil e rápido.</p>
+<p>Este projeto é uma aplicação web desenvolvida com React que permite pesquisar músicas e visualizar as mais populares utilizando a API do Deezer. O campo de busca permite uma busca utilizando o nome do artista, do álbum ou do titulo musical. Uma vez realizada a busca, serão listadas as músicas relacionadas ao texto digitado. Ele foi desenvolvido com TypeScript, garantindo uma maior segurança e organização do código, além de permitir uma melhor escalabilidade do projeto. O projeto também utiliza styled-components, permitindo uma maior flexibilidade no estilo da aplicação e tornando o desenvolvimento mais fácil e rápido.</p>
 
 <a href="https://www.figma.com/file/4etJg79VOy7PPb3X2XHOji/CAM-Tecnologia?node-id=0%3A1&t=ENWKh6I1uYOoWvdB-1">Clique aqui para ver o design do projeto</a>
 <p>Ps: O projeto não seguiu o design à rista, mas está fortemente baseado nele.</p>
