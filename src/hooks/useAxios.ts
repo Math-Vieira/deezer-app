@@ -8,7 +8,7 @@ export interface RequestStates {
   loading: boolean | null
 }
 
-interface Request {
+export interface Request {
   url: string
   method: string
   body?: object | null

@@ -1,4 +1,5 @@
 import { UseAxios } from '../../hooks/useAxios'
+import { API_SEARCH, API_CHART } from '../../api/home'
 
 let wait = false
 let pageNumber = 0
@@ -10,7 +11,7 @@ export const getChartSongs = async (
   isInitial: boolean
 ): Promise<void> => {
   if (isInitial) {
-    await request({ url: '/chart/tracks/10/0', method: 'GET' })
+    await request(API_CHART(0))
     return
   }
 
@@ -22,10 +23,7 @@ export const getChartSongs = async (
     if (scroll > height * 0.99 && !wait && !maxRequest) {
       wait = true
       pageNumber += 1
-      const { data: dataRequest } = await request({
-        url: `/chart/tracks/10/${pageNumber * 10}`,
-        method: 'GET'
-      })
+      const { data: dataRequest } = await request(API_CHART(pageNumber * 10))
       if (dataRequest.data?.length === 0) maxRequest = true
       setTimeout(() => {
         wait = false
@@ -41,7 +39,7 @@ export const searchSong = async (
   searchText: string
 ): Promise<void> => {
   if (isInitial) {
-    await request({ url: `/search/${searchText}/tracks/10/0`, method: 'GET' })
+    await request(API_SEARCH(searchText, 0))
     return
   }
 
@@ -53,10 +51,9 @@ export const searchSong = async (
     if (scroll > height * 0.99 && !wait && !maxRequest) {
       wait = true
       pageNumber += 1
-      const { data: dataRequest } = await request({
-        url: `/search/${searchText}/tracks/10/${pageNumber * 10}`,
-        method: 'GET'
-      })
+      const { data: dataRequest } = await request(
+        API_SEARCH(searchText, pageNumber * 10)
+      )
       if (dataRequest.data?.length === 0) maxRequest = true
       setTimeout(() => {
         wait = false
