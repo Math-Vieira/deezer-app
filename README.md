@@ -27,7 +27,7 @@
   </code>
 </pre>
 
-<h3>2. Instale as dependências:</h3>
+<h3>2. Entre no repositório clonado e instale as dependências:</h3>
 <pre>
   <code>
     npm install
