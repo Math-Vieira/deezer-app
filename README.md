@@ -55,7 +55,7 @@ Você pode deixar a BASE_URL = http://localhost:8080/, já que é a porta onde o
   <tr>
     <td align="center">
       <a href="https://github.com/Math-Vieira">
-        <img src="https://cdn.discordapp.com/attachments/908101448112431115/964905499613077504/me.png" width="100px;" alt="Foto do Matheus Vieira"/><br>
+        <img src="https://avatars.githubusercontent.com/u/92286969?v=4" width="100px;" alt="Foto do Matheus Vieira"/><br>
         <sub>
           <b>Matheus Vieira</b>
         </sub>
