@@ -9,7 +9,7 @@
 <img src="https://img.shields.io/badge/i18next-brightgreen"/>
 </div>
 
-<img src ="https://portfolio-images-mv.s3.amazonaws.com/image+(2).png" />
+<img src ="https://portfolio-images-mv.s3.amazonaws.com/2.png" />
 
 <h2>:bookmark_tabs: Descrição</h2>
 <p>Este projeto é uma aplicação web desenvolvida com React que permite pesquisar músicas e visualizar as mais populares utilizando a API do Deezer. O campo de busca permite uma busca utilizando o nome do artista, do álbum ou do titulo musical. Uma vez realizada a busca, serão listadas as músicas relacionadas ao texto digitado. Ele foi desenvolvido com TypeScript, garantindo uma maior segurança e organização do código, além de permitir uma melhor escalabilidade do projeto. O projeto também utiliza styled-components, permitindo uma maior flexibilidade no estilo da aplicação e tornando o desenvolvimento mais fácil e rápido.</p>
